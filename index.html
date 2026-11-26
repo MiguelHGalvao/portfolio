@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miguel Galvão | Desenvolvedor de Software & Data Analytics</title>
+  <meta name="description" content="Portfólio profissional de Miguel Henrique da Silva Galvão. Desenvolvedor de Software especializado em Python, Inteligência Artificial, Aplicações com LLMs e Data Analytics.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            graphite: {
+              950: '#0B0D0F',
+              900: '#111316',
+              850: '#15181C',
+              800: '#1A1D22',
+              750: '#1E2228',
+              700: '#252932',
+              600: '#323742',
+              500: '#474E5D',
+            },
+            ivory: {
+              DEFAULT: '#F2F0E9',
+              muted: '#A5A39D',
+              subtle: '#6A6965'
+            },
+            amber: {
+              brand: '#C18B42',
+              hover: '#D49B4F',
+              dim: 'rgba(193, 139, 66, 0.12)',
+              border: 'rgba(193, 139, 66, 0.35)'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0D0F;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #23272F;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C18B42;
+    }
+
+    /* Subtle grid background */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    /* Glow utility */
+    .glow-amber {
+      box-shadow: 0 0 35px -5px rgba(193, 139, 66, 0.25);
+    }
+
+    /* Card glow hover */
+    .card-hover-effect {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover-effect:hover {
+      transform: translateY(-2px);
+      border-color: rgba(193, 139, 66, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 20px -5px rgba(193, 139, 66, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-graphite-950 text-ivory font-sans antialiased selection:bg-amber-brand selection:text-graphite-950">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-graphite-950/85 border-b border-graphite-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo / Name -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-graphite-800 border border-graphite-700 flex items-center justify-center font-mono font-bold text-amber-brand group-hover:border-amber-brand/50 group-hover:glow-amber transition-all duration-300">
+          MG
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold tracking-tight text-ivory text-base group-hover:text-amber-brand transition-colors">Miguel Galvão</span>
+          <span class="text-xs font-mono text-ivory-subtle">Software & Analytics</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ivory-muted">
+        <a href="#sobre" class="hover:text-ivory transition-colors">Sobre</a>
+        <a href="#skills" class="hover:text-ivory transition-colors">Habilidades</a>
+        <a href="#projetos" class="hover:text-ivory transition-colors">Projetos</a>
+        <a href="#formacao" class="hover:text-ivory transition-colors">Formação</a>
+        <a href="#contato" class="hover:text-ivory transition-colors">Contato</a>
+      </nav>
+
+      <!-- Status Badge & CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-graphite-900 border border-graphite-700/70 text-xs font-medium text-ivory-muted">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Disponível para Oportunidades</span>
+        </div>
+        <a href="#contato" class="px-4 py-2 rounded-lg bg-amber-brand text-graphite-950 font-semibold text-xs uppercase tracking-wider hover:bg-amber-hover transition-colors shadow-sm">
+          Contato
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-ivory-muted hover:text-ivory p-2 focus:outline-none" aria-label="Abrir Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pt-3 pb-6 bg-graphite-900 border-b border-graphite-800 flex flex-col gap-4 text-sm font-medium">
+      <a href="#sobre" class="mobile-nav-link text-ivory-muted hover:text-ivory py-1">Sobre</a>
+      <a href="#skills" class="mobile-nav-link text-ivory-muted hover:text-ivory py-1">Habilidades</a>
+      <a href="#projetos" class="mobile-nav-link text-ivory-muted hover:text-ivory py-1">Projetos</a>
+      <a href="#formacao" class="mobile-nav-link text-ivory-muted hover:text-ivory py-1">Formação</a>
+      <a href="#contato" class="mobile-nav-link text-ivory-muted hover:text-ivory py-1">Contato</a>
+      <div class="pt-2 flex flex-col gap-3">
+        <div class="flex items-center gap-2 text-xs text-ivory-muted">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Disponível para Oportunidades</span>
+        </div>
+        <a href="#contato" class="mobile-nav-link text-center px-4 py-2.5 rounded-lg bg-amber-brand text-graphite-950 font-semibold text-xs uppercase tracking-wider">
+          Entrar em Contato
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="relative pt-36 pb-20 md:pt-44 md:pb-28 bg-grid-pattern overflow-hidden">
+    <!-- Ambient Glow effect -->
+    <div class="absolute top-1/4 right-5 w-96 h-96 bg-amber-brand/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 left-5 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Intro & Positioning -->
+        <div class="lg:col-span-7 flex flex-col items-start space-y-6">
+          
+          <!-- Location Pill -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-graphite-900 border border-graphite-700 text-xs font-mono text-ivory-muted">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-brand"></i>
+            <span>Santana de Parnaíba - SP</span>
+            <span class="text-graphite-600">•</span>
+            <span class="text-amber-brand font-semibold">SENAI SP Concluído</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ivory leading-[1.12]">
+            Miguel Galvão
+          </h1>
+
+          <!-- Role subtitle -->
+          <p class="text-xl sm:text-2xl font-semibold text-amber-brand flex items-center gap-2 flex-wrap">
+            <span>Desenvolvedor de Software</span>
+            <span class="text-ivory-subtle font-normal">|</span>
+            <span class="text-ivory">Python, IA & Dados</span>
+          </p>
+
+          <!-- Core statement -->
+          <p class="text-base sm:text-lg text-ivory-muted font-normal leading-relaxed max-w-xl">
+            Conectando tecnologia, inteligência artificial e visão de negócios para transformar ideias em soluções digitais e decisões estratégicas.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projetos" class="px-6 py-3.5 rounded-xl bg-amber-brand text-graphite-950 font-bold text-sm hover:bg-amber-hover transition-all flex items-center gap-2 group shadow-lg shadow-amber-brand/10">
+              <span>Ver Projetos</span>
+              <i data-lucide="arrow-down-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/miguelhenriquegalvao/" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-graphite-900 border border-graphite-700 text-ivory font-semibold text-sm hover:border-amber-brand/50 hover:bg-graphite-800 transition-all flex items-center gap-2">
+              <i data-lucide="linkedin" class="w-4 h-4 text-amber-brand"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/MiguelHGalvao" target="_blank" rel="noopener noreferrer" class="px-5 py-3.5 rounded-xl bg-graphite-900 border border-graphite-700 text-ivory font-semibold text-sm hover:border-amber-brand/50 hover:bg-graphite-800 transition-all flex items-center gap-2">
+              <i data-lucide="github" class="w-4 h-4 text-ivory-muted"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <!-- Key highlights badges -->
+          <div class="pt-4 flex flex-wrap items-center gap-3 text-xs font-mono text-ivory-subtle">
+            <span class="px-2.5 py-1 rounded bg-graphite-900 border border-graphite-800 text-ivory-muted">Python</span>
+            <span class="px-2.5 py-1 rounded bg-graphite-900 border border-graphite-800 text-ivory-muted">IA Generativa & LLMs</span>
+            <span class="px-2.5 py-1 rounded bg-graphite-900 border border-graphite-800 text-ivory-muted">Power BI & DAX</span>
+            <span class="px-2.5 py-1 rounded bg-graphite-900 border border-graphite-800 text-ivory-muted">Streamlit</span>
+            <span class="px-2.5 py-1 rounded bg-graphite-900 border border-graphite-800 text-ivory-muted">Git / GitHub</span>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Developer Terminal -->
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl bg-graphite-900 border border-graphite-700/80 shadow-2xl overflow-hidden font-mono text-xs">
+            <!-- Terminal Header -->
+            <div class="px-4 py-3 bg-graphite-850 border-b border-graphite-700/80 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+              </div>
+              <span class="text-ivory-subtle text-[11px] font-mono">miguel@terminal: ~ (zsh)</span>
+              <div class="w-8"></div>
+            </div>
+
+            <!-- Terminal Navigation Tabs -->
+            <div class="flex items-center border-b border-graphite-800 bg-graphite-950/60 px-2">
+              <button onclick="runTerminal('profile')" id="tab-profile" class="term-tab px-3 py-2 text-[11px] border-b-2 border-amber-brand text-ivory font-semibold focus:outline-none">
+                perfil.json
+              </button>
+              <button onclick="runTerminal('skills')" id="tab-skills" class="term-tab px-3 py-2 text-[11px] border-b-2 border-transparent text-ivory-subtle hover:text-ivory focus:outline-none">
+                stack.py
+              </button>
+              <button onclick="runTerminal('goal')" id="tab-goal" class="term-tab px-3 py-2 text-[11px] border-b-2 border-transparent text-ivory-subtle hover:text-ivory focus:outline-none">
+                objetivo.sh
+              </button>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="p-5 space-y-3 min-h-[290px] overflow-x-auto text-[13px] leading-relaxed" id="terminal-content">
+              <!-- Default Content: Profile -->
+              <p class="text-ivory-subtle">$ cat perfil.json</p>
+              <div class="text-ivory pl-2 space-y-1">
+                <p><span class="text-amber-brand">"nome"</span>: <span class="text-emerald-400">"Miguel Henrique da Silva Galvão"</span>,</p>
+                <p><span class="text-amber-brand">"formacao"</span>: <span class="text-emerald-400">"Fábrica de Programadores (SENAI SP) [CONCLUÍDO]"</span>,</p>
+                <p><span class="text-amber-brand">"certificacao_bi"</span>: <span class="text-emerald-400">"Power BI (SENAI SP) [CONCLUÍDO]"</span>,</p>
+                <p><span class="text-amber-brand">"foco"</span>: [<span class="text-sky-300">"Software Dev"</span>, <span class="text-sky-300">"AI / LLMs"</span>, <span class="text-sky-300">"Data Analytics"</span>],</p>
+                <p><span class="text-amber-brand">"email"</span>: <span class="text-amber-brand">"miguel.galvao.hs@gmail.com"</span>,</p>
+                <p><span class="text-amber-brand">"status"</span>: <span class="text-yellow-400">"Disponível para novos desafios e estágio"</span></p>
+              </div>
+              <div class="pt-2 flex items-center gap-1.5 text-amber-brand">
+                <span>➜</span>
+                <span class="text-ivory font-bold">~</span>
+                <span class="w-2 h-4 bg-amber-brand inline-block animate-pulse"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 01. TRAJETÓRIA & VISÃO (SOBRE MIM) ================= -->
+  <section id="sobre" class="py-24 border-t border-graphite-800 bg-graphite-900/40">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="mb-14">
+        <p class="text-xs font-mono uppercase tracking-widest text-amber-brand font-semibold mb-2">01. Trajetória & Visão</p>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-ivory">Sobre Mim</h2>
+        <p class="text-amber-brand font-semibold text-lg sm:text-xl max-w-3xl mt-3 leading-snug">
+          Conectando tecnologia, inteligência artificial e visão de negócios para transformar ideias em soluções digitais.
+        </p>
+      </div>
+
+      <!-- Bento Grid Container -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+        <!-- Card 1: Principal Narrative (Col 8) -->
+        <div class="md:col-span-8 p-8 rounded-2xl bg-graphite-850 border border-graphite-700/80 hover:border-graphite-600 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-amber-brand mb-6 group-hover:scale-105 transition-transform">
+              <i data-lucide="code-2" class="w-6 h-6"></i>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-ivory mb-4">Construindo bases sólidas em tecnologia</h3>
+            
+            <p class="text-ivory-muted leading-relaxed text-base mb-4">
+              Minha trajetória na tecnologia ganhou forma por meio da <strong class="text-ivory">Fábrica de Programadores do SENAI SP</strong>, onde desenvolvi competências em programação, pensamento lógico e resolução de problemas por meio de projetos práticos.
+            </p>
+            
+            <p class="text-ivory-muted leading-relaxed text-base mb-4">
+              Vejo a tecnologia não apenas como um campo de conhecimento, mas como uma ferramenta estratégica para criar soluções, otimizar processos e gerar valor.
+            </p>
+
+            <p class="text-ivory-muted leading-relaxed text-base mb-4">
+              Meus interesses abrangem o desenvolvimento de aplicações e automações com <strong class="text-ivory">Python</strong>, a exploração de <strong class="text-ivory">Inteligência Artificial Generativa e LLMs</strong>, além de análise de dados e Business Intelligence com <strong class="text-ivory">Power BI</strong>.
+            </p>
+
+            <p class="text-ivory-muted leading-relaxed text-base">
+              Busco constantemente conectar conhecimentos técnicos a problemas reais, explorando a interseção entre tecnologia, inovação e negócios.
+            </p>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-graphite-700/60 flex items-center justify-between text-xs font-mono text-ivory-subtle">
+            <span>Foco: Resolução Prática de Problemas</span>
+            <span class="text-amber-brand">SENAI SP Concluído</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Princípios que orientam meu trabalho (Col 4) -->
+        <div class="md:col-span-4 p-8 rounded-2xl bg-graphite-850 border border-graphite-700/80 hover:border-graphite-600 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-amber-brand mb-6 group-hover:scale-105 transition-transform">
+              <i data-lucide="compass" class="w-6 h-6"></i>
+            </div>
+            <p class="text-xs font-mono uppercase tracking-widest text-amber-brand font-semibold mb-1">Pilares de Ação</p>
+            <h3 class="text-xl font-bold text-ivory mb-4">Princípios que orientam meu trabalho</h3>
+            
+            <ul class="space-y-4 text-sm">
+              <li class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750">
+                <p class="font-bold text-ivory flex items-center gap-2 mb-1">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-brand"></i>
+                  <span>Pensamento analítico</span>
+                </p>
+                <p class="text-xs text-ivory-muted leading-relaxed pl-6">
+                  Compreender problemas na raiz e estruturar soluções escaláveis e sustentáveis.
+                </p>
+              </li>
+
+              <li class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750">
+                <p class="font-bold text-ivory flex items-center gap-2 mb-1">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-brand"></i>
+                  <span>Capacidade de execução</span>
+                </p>
+                <p class="text-xs text-ivory-muted leading-relaxed pl-6">
+                  Transformar ideias abstratas em código testado, projetos funcionais e resultados.
+                </p>
+              </li>
+
+              <li class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750">
+                <p class="font-bold text-ivory flex items-center gap-2 mb-1">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-brand"></i>
+                  <span>Curiosidade intelectual</span>
+                </p>
+                <p class="text-xs text-ivory-muted leading-relaxed pl-6">
+                  Aprender continuamente e explorar novas possibilidades técnicas com rapidez.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 02. ARSENAL TÉCNICO (TECNOLOGIAS & HABILIDADES) - REDESENHADO ================= -->
+  <section id="skills" class="py-24 border-t border-graphite-800">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="mb-14">
+        <p class="text-xs font-mono uppercase tracking-widest text-amber-brand font-semibold mb-2">02. Arsenal Técnico</p>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-ivory">Tecnologias & Habilidades</h2>
+        <p class="text-ivory-muted text-base max-w-2xl mt-3">
+          Competências estruturadas por domínio, com foco em aplicação prática, código de qualidade e geração de insights analíticos.
+        </p>
+      </div>
+
+      <!-- Visual Tech Grid: 4 Modern Bento Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- DOMÍNIO 1: Linguagens de Programação -->
+        <div class="p-7 rounded-2xl bg-graphite-850 border border-graphite-700/80 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-graphite-750">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-dim border border-amber-border flex items-center justify-center text-amber-brand">
+                  <i data-lucide="code" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-ivory">Linguagens de Programação</h3>
+                  <p class="text-xs text-ivory-subtle font-mono">Core & Desenvolvimento</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-graphite-800 text-xs font-mono text-amber-brand font-semibold">4 Tecnologias</span>
+            </div>
+
+            <!-- Skill Tiles -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              
+              <!-- Python -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-amber-brand/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Python</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-amber-dim text-amber-brand font-semibold">Principal</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Automação, POO, scripts, manipulação de dados e IA.</p>
+              </div>
+
+              <!-- JavaScript -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-amber-brand/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">JavaScript</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">ES6+</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Interatividade dinâmica, consumo de JSON e DOM.</p>
+              </div>
+
+              <!-- SQL -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-amber-brand/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">SQL</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Banco de Dados</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Consultas relacionais, junções (JOINs) e agregações.</p>
+              </div>
+
+              <!-- HTML5 & CSS3 -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-amber-brand/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">HTML5 & CSS3</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Modern Web</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Estruturação semântica, flexbox, grid e responsividade.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- DOMÍNIO 2: Dados & Business Intelligence -->
+        <div class="p-7 rounded-2xl bg-graphite-850 border border-graphite-700/80 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-graphite-750">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                  <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-ivory">Dados & Business Intelligence</h3>
+                  <p class="text-xs text-ivory-subtle font-mono">Modelagem & Métricas</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-graphite-800 text-xs font-mono text-blue-400 font-semibold">SENAI Certificado</span>
+            </div>
+
+            <!-- Skill Tiles -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              
+              <!-- Power BI -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-blue-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Power BI Desktop</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-500/15 text-blue-300 font-semibold">SENAI SP</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Construção de relatórios executivos e dashboards interativos.</p>
+              </div>
+
+              <!-- DAX -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-blue-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Linguagem DAX</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Medidas & Cálculos</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">CALCULATE, USERELATIONSHIP, métricas de negócio e inteligência temporal.</p>
+              </div>
+
+              <!-- Modelagem Dimensional -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-blue-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Star Schema</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Arquitetura</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Tabelas Fatos e Dimensões, cardinalidades 1:* e otimização VertiPaq.</p>
+              </div>
+
+              <!-- Excel & Análise -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-blue-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Excel & Análise</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Exploração</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Sumarização, validação de regras de negócio e cruzamento de dados.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- DOMÍNIO 3: Inteligência Artificial & LLMs -->
+        <div class="p-7 rounded-2xl bg-graphite-850 border border-graphite-700/80 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-graphite-750">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                  <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-ivory">Inteligência Artificial & LLMs</h3>
+                  <p class="text-xs text-ivory-subtle font-mono">Aplicações Práticas</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-graphite-800 text-xs font-mono text-emerald-400 font-semibold">Inovação</span>
+            </div>
+
+            <!-- Skill Tiles -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              
+              <!-- Aplicações com LLMs -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-emerald-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Aplicações com LLMs</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/15 text-emerald-300 font-semibold">APIs</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Desenvolvimento de soluções com modelos avançados de linguagem.</p>
+              </div>
+
+              <!-- Engenharia de Prompt -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-emerald-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Engenharia de Prompt</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Contexto</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Técnicas de few-shot, restrições e orquestração de respostas determinísticas.</p>
+              </div>
+
+              <!-- IA Generativa -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-emerald-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">IA Generativa</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Certificado</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Fundamentos conceituais, ética e aplicação em fluxos de trabalho reais.</p>
+              </div>
+
+              <!-- Streamlit for AI -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-emerald-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Streamlit AI</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Interfaces</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Front-ends velozes para prototipagem de produtos movidos a IA.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- DOMÍNIO 4: Ferramentas & Ecossistema -->
+        <div class="p-7 rounded-2xl bg-graphite-850 border border-graphite-700/80 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-graphite-750">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+                  <i data-lucide="layers" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-ivory">Ferramentas & Ecossistema</h3>
+                  <p class="text-xs text-ivory-subtle font-mono">Produtividade & Gestão</p>
+                </div>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-graphite-800 text-xs font-mono text-purple-400 font-semibold">DevOps</span>
+            </div>
+
+            <!-- Skill Tiles -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              
+              <!-- Git & GitHub -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-purple-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Git & GitHub</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-purple-500/15 text-purple-300 font-semibold">Versionamento</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Commits semânticos, branches, pull requests e repositórios remotos.</p>
+              </div>
+
+              <!-- VS Code -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-purple-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">VS Code</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Ambiente</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Extensões, depuração, linters e ambiente virtual de desenvolvimento.</p>
+              </div>
+
+              <!-- Streamlit Core -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-purple-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Streamlit</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Data Apps</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Construção de aplicações completas em Python para visualização de dados.</p>
+              </div>
+
+              <!-- Linux / Terminal -->
+              <div class="p-3.5 rounded-xl bg-graphite-900 border border-graphite-750 hover:border-purple-500/40 transition-all">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-bold text-sm text-ivory">Linux & CLI</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-graphite-800 text-ivory-subtle">Terminal</span>
+                </div>
+                <p class="text-xs text-ivory-muted leading-relaxed">Navegação em linha de comando, automação e gerenciamento de processos.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 03. PROJETOS EM DESTAQUE ================= -->
+  <section id="projetos" class="py-24 border-t border-graphite-800 bg-graphite-900/40">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <p class="text-xs font-mono uppercase tracking-widest text-amber-brand font-semibold mb-2">03. Portfólio de Aplicações</p>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-ivory">Projetos em Destaque</h2>
+          <p class="text-ivory-muted text-base max-w-xl mt-3">
+            Seleção de projetos autorais e acadêmicos com código disponível, propósitos claros e tecnologias modernas.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-xl bg-graphite-850 border border-graphite-700 self-start md:self-auto text-xs font-mono">
+          <button onclick="filterProjects('all')" class="filter-btn px-3 py-1.5 rounded-lg bg-amber-brand text-graphite-950 font-bold transition-all" data-category="all">Todos</button>
+          <button onclick="filterProjects('ai')" class="filter-btn px-3 py-1.5 rounded-lg text-ivory-muted hover:text-ivory transition-all" data-category="ai">Python & IA</button>
+          <button onclick="filterProjects('data')" class="filter-btn px-3 py-1.5 rounded-lg text-ivory-muted hover:text-ivory transition-all" data-category="data">Dados & Analytics</button>
+          <button onclick="filterProjects('web')" class="filter-btn px-3 py-1.5 rounded-lg text-ivory-muted hover:text-ivory transition-all" data-category="web">Web & Games</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-container">
+
+        <!-- PROJETO 1: CodeForge AI -->
+        <div class="project-card group rounded-2xl bg-graphite-850 border border-graphite-700/80 hover:border-amber-brand/50 transition-all flex flex-col justify-between overflow-hidden" data-category="ai">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-amber-dim border border-amber-border text-amber-brand text-[11px] font-mono font-semibold">Python • IA</span>
+              <a href="https://github.com/MiguelHGalvao" target="_blank" class="text-ivory-subtle hover:text-ivory p-1">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-ivory group-hover:text-amber-brand transition-colors mb-2">CodeForge AI</h3>
+            <p class="text-ivory-muted text-sm leading-relaxed mb-4">
+              Aplicação inteligente desenvolvida para geração e refatoração de código com assistência de Modelos de Linguagem (LLMs), integrando interface interativa em Streamlit.
+            </p>
+            <div class="space-y-1.5 text-xs text-ivory-subtle mb-4">
+              <p><strong class="text-ivory">Propósito:</strong> Otimizar o fluxo de escrita de scripts e explicação de algoritmos.</p>
+              <p><strong class="text-ivory">Destaque:</strong> Tratamento de respostas de IA e engenharia de contexto.</p>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-graphite-900 border-t border-graphite-700/60 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-mono text-ivory-subtle">
+              <span>Python</span> • <span>Streamlit</span> • <span>LLMs</span>
+            </div>
+            <button onclick="openModal('codeforge')" class="text-xs font-semibold text-amber-brand hover:underline flex items-center gap-1">
+              Ver Detalhes <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJETO 2: Finance Dashboard -->
+        <div class="project-card group rounded-2xl bg-graphite-850 border border-graphite-700/80 hover:border-amber-brand/50 transition-all flex flex-col justify-between overflow-hidden" data-category="data">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-blue-500/10 border border-blue-500/30 text-blue-400 text-[11px] font-mono font-semibold">Dados & Finanças</span>
+              <a href="https://github.com/MiguelHGalvao" target="_blank" class="text-ivory-subtle hover:text-ivory p-1">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-ivory group-hover:text-amber-brand transition-colors mb-2">Finance Dashboard</h3>
+            <p class="text-ivory-muted text-sm leading-relaxed mb-4">
+              Dashboard analítico interativo para monitoramento de métricas financeiras, receitas, despesas e margens com visualizações gráficas de alta performance em Python.
+            </p>
+            <div class="space-y-1.5 text-xs text-ivory-subtle mb-4">
+              <p><strong class="text-ivory">Propósito:</strong> Fornecer visibilidade financeira clara para suporte à decisão gerencial.</p>
+              <p><strong class="text-ivory">Destaque:</strong> Filtros dinâmicos e sumarização automatizada de indicadores.</p>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-graphite-900 border-t border-graphite-700/60 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-mono text-ivory-subtle">
+              <span>Python</span> • <span>Streamlit</span> • <span>Plotly</span>
+            </div>
+            <button onclick="openModal('finance')" class="text-xs font-semibold text-amber-brand hover:underline flex items-center gap-1">
+              Ver Detalhes <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJETO 3: CIARTEC 2026 -->
+        <div class="project-card group rounded-2xl bg-graphite-850 border border-graphite-700/80 hover:border-amber-brand/50 transition-all flex flex-col justify-between overflow-hidden" data-category="web">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono font-semibold">Web & Cultura</span>
+              <a href="https://github.com/MiguelHGalvao" target="_blank" class="text-ivory-subtle hover:text-ivory p-1">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-ivory group-hover:text-amber-brand transition-colors mb-2">CIARTEC 2026</h3>
+            <p class="text-ivory-muted text-sm leading-relaxed mb-4">
+              Plataforma educacional e tecnológica interativa ("Ásia em Transformação"), estruturada para exibição dinâmica de conteúdos culturais e históricos consumindo JSON.
+            </p>
+            <div class="space-y-1.5 text-xs text-ivory-subtle mb-4">
+              <p><strong class="text-ivory">Propósito:</strong> Apresentação interativa de dados em evento acadêmico.</p>
+              <p><strong class="text-ivory">Destaque:</strong> Manipulação fluida de DOM, modularidade e design responsivo.</p>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-graphite-900 border-t border-graphite-700/60 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-mono text-ivory-subtle">
+              <span>JavaScript</span> • <span>JSON</span> • <span>CSS3</span>
+            </div>
+            <button onclick="openModal('ciartec')" class="text-xs font-semibold text-amber-brand hover:underline flex items-center gap-1">
+              Ver Detalhes <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJETO 4: Startup Tycoon -->
+        <div class="project-card group rounded-2xl bg-graphite-850 border border-graphite-700/80 hover:border-amber-brand/50 transition-all flex flex-col justify-between overflow-hidden" data-category="web">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-400 text-[11px] font-mono font-semibold">Game Dev • Lógica</span>
+              <a href="https://github.com/MiguelHGalvao" target="_blank" class="text-ivory-subtle hover:text-ivory p-1">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-ivory group-hover:text-amber-brand transition-colors mb-2">Startup Tycoon</h3>
+            <p class="text-ivory-muted text-sm leading-relaxed mb-4">
+              Jogo 2D de simulação e gestão empresarial desenvolvido em Python (Pygame), combinando tomada de decisões econômicas, controle de caixa e lógica de algoritmos orientada a objetos.
+            </p>
+            <div class="space-y-1.5 text-xs text-ivory-subtle mb-4">
+              <p><strong class="text-ivory">Propósito:</strong> Simular os desafios estratégicos de escala de uma startup.</p>
+              <p><strong class="text-ivory">Destaque:</strong> Estruturas de dados, game loop e máquina de estados em Python.</p>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-graphite-900 border-t border-graphite-700/60 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-mono text-ivory-subtle">
+              <span>Python</span> • <span>Pygame</span> • <span>OOP</span>
+            </div>
+            <button onclick="openModal('startup')" class="text-xs font-semibold text-amber-brand hover:underline flex items-center gap-1">
+              Ver Detalhes <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJETO 5: Chatte -->
+        <div class="project-card group rounded-2xl bg-graphite-850 border border-graphite-700/80 hover:border-amber-brand/50 transition-all flex flex-col justify-between overflow-hidden" data-category="ai">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-amber-dim border border-amber-border text-amber-brand text-[11px] font-mono font-semibold">Python • Web App</span>
+              <a href="https://github.com/MiguelHGalvao" target="_blank" class="text-ivory-subtle hover:text-ivory p-1">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-ivory group-hover:text-amber-brand transition-colors mb-2">Chatte</h3>
+            <p class="text-ivory-muted text-sm leading-relaxed mb-4">
+              Aplicação de comunicação e mensageria construída em Python e Streamlit, com persistência em arquivos JSON e controle de fluxo de mensagens.
+            </p>
+            <div class="space-y-1.5 text-xs text-ivory-subtle mb-4">
+              <p><strong class="text-ivory">Propósito:</strong> Explorar a engenharia de sessões e interfaces conversacionais.</p>
+              <p><strong class="text-ivory">Destaque:</strong> Manipulação de sessão, estados e I/O de dados.</p>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-graphite-900 border-t border-graphite-700/60 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-mono text-ivory-subtle">
+              <span>Python</span> • <span>Streamlit</span> • <span>JSON</span>
+            </div>
+            <button onclick="openModal('chatte')" class="text-xs font-semibold text-amber-brand hover:underline flex items-center gap-1">
+              Ver Detalhes <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJETO 6: Modelagem Relacional & DAX (SENAI SP) -->
+        <div class="project-card group rounded-2xl bg-graphite-850 border border-graphite-700/80 hover:border-amber-brand/50 transition-all flex flex-col justify-between overflow-hidden" data-category="data">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-[11px] font-mono font-semibold">Artigo & Modelagem</span>
+              <a href="https://github.com/MiguelHGalvao" target="_blank" class="text-ivory-subtle hover:text-ivory p-1">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <h3 class="text-xl font-bold text-ivory group-hover:text-amber-brand transition-colors mb-2">Redes de Relacionamento no Power BI</h3>
+            <p class="text-ivory-muted text-sm leading-relaxed mb-4">
+              Estudo de caso e artigo técnico elaborado na Fábrica de Programadores (SENAI SP) sobre boas práticas de modelagem relacional no Power BI Desktop.
+            </p>
+            <div class="space-y-1.5 text-xs text-ivory-subtle mb-4">
+              <p><strong class="text-ivory">Instituição:</strong> Fábrica de Programadores – SENAI SP.</p>
+              <p><strong class="text-ivory">Destaque:</strong> Rigor técnico, arquitetura colunar VertiPaq e boas práticas.</p>
+            </div>
+          </div>
+          <div class="px-6 py-4 bg-graphite-900 border-t border-graphite-700/60 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-mono text-ivory-subtle">
+              <span>Power BI</span> • <span>DAX</span> • <span>Star Schema</span>
+            </div>
+            <button onclick="openModal('powerbi')" class="text-xs font-semibold text-amber-brand hover:underline flex items-center gap-1">
+              Ver Detalhes <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 04. FORMAÇÃO & CERTIFICAÇÕES ================= -->
+  <section id="formacao" class="py-24 border-t border-graphite-800">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="mb-14">
+        <p class="text-xs font-mono uppercase tracking-widest text-amber-brand font-semibold mb-2">04. Aprendizado Contínuo</p>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-ivory">Formação & Certificações</h2>
+        <p class="text-ivory-muted text-base max-w-2xl mt-3">
+          Histórico educacional e certificações que fundamentam meu repertório técnico e analítico.
+        </p>
+      </div>
+
+      <!-- Timeline Items -->
+      <div class="space-y-6 max-w-3xl">
+
+        <!-- Item 1: SENAI SP Fábrica de Programadores (CONCLUÍDO) -->
+        <div class="p-6 rounded-2xl bg-graphite-900 border border-graphite-700/80 hover:border-amber-brand/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-amber-brand shrink-0">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-ivory">Fábrica de Programadores</h3>
+              <p class="text-sm font-semibold text-amber-brand">SENAI SP • Santana de Parnaíba</p>
+              <p class="text-xs text-ivory-muted mt-1 leading-relaxed">
+                Desenvolvimento de software, engenharia de algoritmos, modelagem relacional, metodologias ágeis e execução de projetos técnicos.
+              </p>
+            </div>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono sm:text-right shrink-0">
+            Concluído
+          </span>
+        </div>
+
+        <!-- Item 2: Power BI SENAI SP (CONCLUÍDO) -->
+        <div class="p-6 rounded-2xl bg-graphite-900 border border-graphite-700/80 hover:border-amber-brand/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-blue-400 shrink-0">
+              <i data-lucide="bar-chart" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-ivory">Power BI</h3>
+              <p class="text-sm font-semibold text-blue-400">SENAI SP</p>
+              <p class="text-xs text-ivory-muted mt-1 leading-relaxed">
+                Modelagem de dados dimensional (Star Schema), fórmulas e métricas DAX, ETL com Power Query e visualização estratégica.
+              </p>
+            </div>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono sm:text-right shrink-0">
+            Certificado
+          </span>
+        </div>
+
+        <!-- Item 3: Python -->
+        <div class="p-6 rounded-2xl bg-graphite-900 border border-graphite-700/80 hover:border-amber-brand/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-amber-brand shrink-0">
+              <i data-lucide="terminal" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-ivory">Programação em Python</h3>
+              <p class="text-sm text-ivory-muted">Estruturas de Dados, POO, Automação e Manipulação de Arquivos</p>
+            </div>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono sm:text-right shrink-0">
+            Certificado
+          </span>
+        </div>
+
+        <!-- Item 4: Inteligência Artificial Generativa -->
+        <div class="p-6 rounded-2xl bg-graphite-900 border border-graphite-700/80 hover:border-amber-brand/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-emerald-400 shrink-0">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-ivory">Inteligência Artificial Generativa</h3>
+              <p class="text-sm text-ivory-muted">Fundamentos de LLMs, Engenharia de Contexto e Aplicações Práticas</p>
+            </div>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono sm:text-right shrink-0">
+            Certificado
+          </span>
+        </div>
+
+        <!-- Item 5: Segurança Cibernética & LGPD -->
+        <div class="p-6 rounded-2xl bg-graphite-900 border border-graphite-700/80 hover:border-amber-brand/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-amber-brand shrink-0">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-ivory">Segurança Cibernética & LGPD</h3>
+              <p class="text-sm text-ivory-muted">Conscientização em Proteção de Dados, Privacidade e Governança da Informação</p>
+            </div>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono sm:text-right shrink-0">
+            Certificado
+          </span>
+        </div>
+
+        <!-- Item 6: Excel Básico & Análise -->
+        <div class="p-6 rounded-2xl bg-graphite-900 border border-graphite-700/80 hover:border-amber-brand/40 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-graphite-800 border border-graphite-700 flex items-center justify-center text-amber-brand shrink-0">
+              <i data-lucide="table" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-ivory">Excel Básico e Análise de Dados</h3>
+              <p class="text-sm text-ivory-muted">Cálculos, Fórmulas Condicionais e Estruturação de Planilhas</p>
+            </div>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono sm:text-right shrink-0">
+            Certificado
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 05. CONTATO & CALL TO ACTION ================= -->
+  <section id="contato" class="py-24 border-t border-graphite-800 bg-graphite-900/60 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-brand/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      
+      <p class="text-xs font-mono uppercase tracking-widest text-amber-brand font-semibold mb-3">05. Próximo Passo</p>
+      <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-ivory mb-6">
+        Vamos construir algo relevante juntos?
+      </h2>
+      <p class="text-ivory-muted text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10">
+        Estou aberto a oportunidades de estágio, colaborações em projetos e desafios técnicos em desenvolvimento de software e análise de dados.
+      </p>
+
+      <!-- Quick Action Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
+        
+        <!-- LinkedIn Real -->
+        <a href="https://www.linkedin.com/in/miguelhenriquegalvao/" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-graphite-850 border border-graphite-700 hover:border-amber-brand/50 transition-all flex flex-col items-center group">
+          <i data-lucide="linkedin" class="w-6 h-6 text-amber-brand mb-2 group-hover:scale-110 transition-transform"></i>
+          <span class="font-bold text-sm text-ivory">LinkedIn</span>
+          <span class="text-xs text-ivory-subtle mt-0.5">/in/miguelhenriquegalvao</span>
+        </a>
+
+        <!-- GitHub Real -->
+        <a href="https://github.com/MiguelHGalvao" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-graphite-850 border border-graphite-700 hover:border-amber-brand/50 transition-all flex flex-col items-center group">
+          <i data-lucide="github" class="w-6 h-6 text-amber-brand mb-2 group-hover:scale-110 transition-transform"></i>
+          <span class="font-bold text-sm text-ivory">GitHub</span>
+          <span class="text-xs text-ivory-subtle mt-0.5">@MiguelHGalvao</span>
+        </a>
+
+        <!-- Copiar E-mail Real -->
+        <button onclick="copyEmail()" id="btn-copy-email" class="p-5 rounded-2xl bg-graphite-850 border border-graphite-700 hover:border-amber-brand/50 transition-all flex flex-col items-center group focus:outline-none">
+          <i data-lucide="mail" class="w-6 h-6 text-amber-brand mb-2 group-hover:scale-110 transition-transform" id="icon-mail"></i>
+          <span class="font-bold text-sm text-ivory" id="text-copy-email">Copiar E-mail</span>
+          <span class="text-xs text-ivory-subtle mt-0.5" id="label-email">miguel.galvao.hs@gmail.com</span>
+        </button>
+
+      </div>
+
+      <div class="inline-flex items-center gap-2 text-xs font-mono text-ivory-subtle">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span>Tempo de resposta habitual: dentro de 24 horas</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-8 border-t border-graphite-800 bg-graphite-950 text-xs text-ivory-subtle">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-mono font-bold text-amber-brand">MG</span>
+        <span>•</span>
+        <span>© 2026 Miguel Henrique da Silva Galvão. Todos os direitos reservados.</span>
+      </div>
+      <p class="text-center sm:text-right font-mono text-[11px]">
+        Desenvolvido com foco em código limpo, design moderno e performance.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL DE DETALHES DO PROJETO ================= -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-graphite-950/85 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="rounded-2xl bg-graphite-900 border border-graphite-700 max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal()" class="absolute top-5 right-5 text-ivory-subtle hover:text-ivory p-1.5 rounded-lg bg-graphite-800 focus:outline-none">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modal-content">
+        <!-- Injetado dinamicamente via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // Inicializar ícones Lucide
+    lucide.createIcons();
+
+    // Menu Mobile Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Terminal Interativo
+    const termData = {
+      profile: `
+        <p class="text-ivory-subtle">$ cat perfil.json</p>
+        <div class="text-ivory pl-2 space-y-1">
+          <p><span class="text-amber-brand">"nome"</span>: <span class="text-emerald-400">"Miguel Henrique da Silva Galvão"</span>,</p>
+          <p><span class="text-amber-brand">"formacao"</span>: <span class="text-emerald-400">"Fábrica de Programadores (SENAI SP) [CONCLUÍDO]"</span>,</p>
+          <p><span class="text-amber-brand">"certificacao_bi"</span>: <span class="text-emerald-400">"Power BI (SENAI SP) [CONCLUÍDO]"</span>,</p>
+          <p><span class="text-amber-brand">"foco"</span>: [<span class="text-sky-300">"Software Dev"</span>, <span class="text-sky-300">"AI / LLMs"</span>, <span class="text-sky-300">"Data Analytics"</span>],</p>
+          <p><span class="text-amber-brand">"email"</span>: <span class="text-amber-brand">"miguel.galvao.hs@gmail.com"</span>,</p>
+          <p><span class="text-amber-brand">"status"</span>: <span class="text-yellow-400">"Disponível para novos desafios e estágio"</span></p>
+        </div>
+        <div class="pt-2 flex items-center gap-1.5 text-amber-brand">
+          <span>➜</span>
+          <span class="text-ivory font-bold">~</span>
+          <span class="w-2 h-4 bg-amber-brand inline-block animate-pulse"></span>
+        </div>
+      `,
+      skills: `
+        <p class="text-ivory-subtle">$ python -c "import skills; print(skills.get_summary())"</p>
+        <div class="text-ivory pl-2 space-y-1">
+          <p><span class="text-amber-brand">Linguagens</span>: Python (Principal), JavaScript (ES6+), SQL, HTML5/CSS3</p>
+          <p><span class="text-amber-brand">Dados & BI</span>: Microsoft Power BI, Modelagem Star Schema, DAX, Excel</p>
+          <p><span class="text-amber-brand">AI & Prompts</span>: Engenharia de Contexto, APIs de LLMs, Aplicações Streamlit</p>
+          <p><span class="text-amber-brand">Ferramentas</span>: Git/GitHub, VS Code, Linux/Bash</p>
+        </div>
+        <div class="pt-2 flex items-center gap-1.5 text-amber-brand">
+          <span>➜</span>
+          <span class="text-ivory font-bold">~</span>
+          <span class="w-2 h-4 bg-amber-brand inline-block animate-pulse"></span>
+        </div>
+      `,
+      goal: `
+        <p class="text-ivory-subtle">$ ./objetivo.sh --verbose</p>
+        <div class="text-ivory pl-2 space-y-1">
+          <p>[INFO] Carreira focada em unir Engenharia de Software, Dados e Negócios.</p>
+          <p>[FORMAÇÃO] Fábrica de Programadores & Power BI concluídos pelo SENAI SP.</p>
+          <p>[ALVO] Oportunidades em desenvolvimento Python, Inteligência Artificial ou Dados.</p>
+          <p class="text-emerald-400">[READY] Preparado para construir soluções digitais de alto impacto.</p>
+        </div>
+        <div class="pt-2 flex items-center gap-1.5 text-amber-brand">
+          <span>➜</span>
+          <span class="text-ivory font-bold">~</span>
+          <span class="w-2 h-4 bg-amber-brand inline-block animate-pulse"></span>
+        </div>
+      `
+    };
+
+    function runTerminal(tabKey) {
+      document.getElementById('terminal-content').innerHTML = termData[tabKey];
+      document.querySelectorAll('.term-tab').forEach(tab => {
+        tab.classList.remove('border-amber-brand', 'text-ivory');
+        tab.classList.add('border-transparent', 'text-ivory-subtle');
+      });
+      const activeTab = document.getElementById(`tab-${tabKey}`);
+      if (activeTab) {
+        activeTab.classList.remove('border-transparent', 'text-ivory-subtle');
+        activeTab.classList.add('border-amber-brand', 'text-ivory');
+      }
+    }
+
+    // Filtro de Projetos
+    function filterProjects(cat) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-category') === cat) {
+          btn.classList.add('bg-amber-brand', 'text-graphite-950', 'font-bold');
+          btn.classList.remove('text-ivory-muted');
+        } else {
+          btn.classList.remove('bg-amber-brand', 'text-graphite-950', 'font-bold');
+          btn.classList.add('text-ivory-muted');
+        }
+      });
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal de Projetos
+    const modalDetails = {
+      codeforge: {
+        title: "CodeForge AI",
+        category: "Python • Inteligência Artificial & LLMs",
+        desc: "Uma aplicação desenvolvida para auxiliar programadores na escrita, teste e documentação de código através de modelos de inteligência artificial generativa.",
+        problem: "Muitos desenvolvedores gastam tempo excessivo com tarefas repetitivas de sintaxe e escrita de testes unitários ou documentação técnica.",
+        solution: "Desenvolvimento de uma interface limpa em Streamlit conectada a APIs de LLMs com prompts refinados para análise semântica e correção de bugs.",
+        techs: ["Python", "Streamlit", "Integração com LLMs", "Engenharia de Prompt"],
+        github: "https://github.com/MiguelHGalvao"
+      },
+      finance: {
+        title: "Finance Dashboard",
+        category: "Visualização de Dados & Business Intelligence",
+        desc: "Painel financeiro interativo para acompanhamento de receitas, custos e fluxo de caixa, com gráficos analíticos e filtros dinâmicos.",
+        problem: "Dificuldade de visualizar rapidamente a saúde financeira e a distribuição de custos operacionais em planilhas convencionais.",
+        solution: "Criação de um painel interativo em Python utilizando Streamlit e bibliotecas visuais para sumarizar KPIs fundamentais com agilidade.",
+        techs: ["Python", "Streamlit", "Plotly", "Análise Exploratória"],
+        github: "https://github.com/MiguelHGalvao"
+      },
+      ciartec: {
+        title: "CIARTEC 2026 — Ásia em Transformação",
+        category: "Engenharia Web & Visualização Interativa",
+        desc: "Projeto educacional e tecnológico desenvolvido para apresentar a evolução econômica, cultural e tecnológica dos países asiáticos.",
+        problem: "Apresentar grande volume de informações históricas e culturais de forma atrativa e não monótona para o público acadêmico.",
+        solution: "Arquitetura web semântica em HTML/CSS/JS consumindo bases em JSON com renderização dinâmica de dados e interface responsiva.",
+        techs: ["JavaScript (ES6+)", "JSON", "HTML5 Semântico", "CSS3 Moderno"],
+        github: "https://github.com/MiguelHGalvao"
+      },
+      startup: {
+        title: "Startup Tycoon",
+        category: "Game Development & Lógica Algorítmica",
+        desc: "Jogo 2D de simulação empresarial no qual o jogador gerencia os recursos de uma startup de tecnologia, contratando equipes e buscando tração de mercado.",
+        problem: "Desenvolver uma simulação interativa com controle de tempo, economia interna e eventos aleatórios em tempo real.",
+        solution: "Construção de um motor de jogo em Python (Pygame) aplicando Orientação a Objetos (OOP), controle de estados e cálculo de variáveis econômicas.",
+        techs: ["Python", "Pygame", "Programação Orientada a Objetos", "Algoritmos"],
+        github: "https://github.com/MiguelHGalvao"
+      },
+      chatte: {
+        title: "Chatte",
+        category: "Aplicações Interativas & Persistência",
+        desc: "Aplicação conversacional individual desenvolvida em Python para envio, formatação e histórico de mensagens estruturadas.",
+        problem: "Compreender e implementar a persistência de estados conversacionais e manipulação de inputs de usuário.",
+        solution: "Aplicação construída em Streamlit gerenciando estados em tempo de execução (`st.session_state`) e armazenamento estruturado em JSON.",
+        techs: ["Python", "Streamlit", "JSON", "Gerenciamento de Sessão"],
+        github: "https://github.com/MiguelHGalvao"
+      },
+      powerbi: {
+        title: "Redes de Relacionamento no Power BI",
+        category: "Modelagem Dimensional & DAX Avançado",
+        desc: "Estudo de caso e artigo técnico elaborado no SENAI SP sobre boas práticas de modelagem relacional no Power BI Desktop.",
+        problem: "Erros comuns de cálculo no Power BI causados por cardinalidades incorretas, propagação ambígua de filtros cruzados e modelos desnormalizados.",
+        solution: "Demonstração prática do Esquema em Estrela (Star Schema), diferenciação entre Tabelas Fatos e Dimensões e uso da função DAX USERELATIONSHIP para relações inativas.",
+        techs: ["Power BI Desktop", "DAX", "Star Schema", "Motor VertiPaq"],
+        github: "https://github.com/MiguelHGalvao"
+      }
+    };
+
+    function openModal(id) {
+      const data = modalDetails[id];
+      if (!data) return;
+
+      const content = `
+        <div class="mb-4">
+          <span class="text-xs font-mono text-amber-brand font-semibold">${data.category}</span>
+          <h3 class="text-2xl font-bold text-ivory mt-1">${data.title}</h3>
+        </div>
+        <p class="text-ivory-muted text-sm leading-relaxed mb-6">${data.desc}</p>
+        
+        <div class="space-y-4 mb-6 text-sm">
+          <div class="p-4 rounded-xl bg-graphite-850 border border-graphite-700/70">
+            <h4 class="font-bold text-amber-brand mb-1">O Problema</h4>
+            <p class="text-ivory-muted leading-relaxed">${data.problem}</p>
+          </div>
+          <div class="p-4 rounded-xl bg-graphite-850 border border-graphite-700/70">
+            <h4 class="font-bold text-emerald-400 mb-1">A Solução Desenvolvida</h4>
+            <p class="text-ivory-muted leading-relaxed">${data.solution}</p>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h4 class="text-xs font-mono uppercase tracking-wider text-ivory-subtle mb-2">Tecnologias Utilizadas</h4>
+          <div class="flex flex-wrap gap-2">
+            ${data.techs.map(t => `<span class="px-2.5 py-1 rounded bg-graphite-800 border border-graphite-700 text-xs text-ivory font-mono">${t}</span>`).join('')}
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-4 border-t border-graphite-800">
+          <button onclick="closeModal()" class="px-4 py-2 rounded-lg bg-graphite-800 text-ivory-muted hover:text-ivory text-xs font-semibold">
+            Fechar
+          </button>
+          <a href="${data.github}" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-amber-brand text-graphite-950 font-bold text-xs flex items-center gap-1.5 hover:bg-amber-hover transition-colors">
+            <span>Ver no GitHub</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      `;
+
+      document.getElementById('modal-content').innerHTML = content;
+      document.getElementById('project-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('project-modal').classList.add('hidden');
+    }
+
+    // Fechar modal ao clicar fora
+    document.getElementById('project-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'project-modal') closeModal();
+    });
+
+    // Copiar E-mail
+    function copyEmail() {
+      const email = "miguel.galvao.hs@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        document.getElementById('text-copy-email').innerText = "Copiado com sucesso!";
+        document.getElementById('label-email').innerText = email;
+        setTimeout(() => {
+          document.getElementById('text-copy-email').innerText = "Copiar E-mail";
+          document.getElementById('label-email').innerText = email;
+        }, 3000);
+      }).catch(() => {
+        alert("E-mail para contato: " + email);
+      });
+    }
+  </script>
+</body>
+</html>
