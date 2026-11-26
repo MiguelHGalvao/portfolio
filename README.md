@@ -5,7 +5,7 @@
 
 ---
 
-## 📋 Sumário
+## Sumário
 
 - [Visão Geral](#-visão-geral)
 - [Funcionalidades e Diferenciais](#-funcionalidades-e-diferenciais)
@@ -19,7 +19,7 @@
 
 ---
 
-## 🔭 Visão Geral
+## Visão Geral
 
 Este repositório contém a versão completa do meu **portfólio profissional**, estruturado para apresentar minha atuação na união entre **Desenvolvimento de Software (Python)**, **Inteligência Artificial (LLMs)** e **Business Intelligence & Análise de Dados**.
 
@@ -30,7 +30,7 @@ O projeto prioriza:
 
 ---
 
-## ✨ Funcionalidades e Diferenciais
+## Funcionalidades e Diferenciais
 
 - **Terminal Interativo (CLI):** Na seção principal, um widget simula um terminal Zsh interativo que permite navegar por comandos (`perfil.json`, `stack.py`, `objetivo.sh`).
 - **Arquitetura Bento Grid:** Organização modular na seção *Sobre Mim*, destacando trajetória, mentalidade de produto e princípios que orientam o trabalho.
@@ -40,7 +40,7 @@ O projeto prioriza:
 
 ---
 
-## 🎨 Design System
+## Design System
 
 O projeto adota uma paleta autoral com foco em sobriedade e alto contraste:
 
@@ -52,7 +52,7 @@ O projeto adota uma paleta autoral com foco em sobriedade e alto contraste:
 
 ---
 
-## 💻 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Desenvolvimento & Interface
 - **HTML5 Semântico:** Marcação acessível e estruturada.
@@ -68,7 +68,7 @@ O projeto adota uma paleta autoral com foco em sobriedade e alto contraste:
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```text
 portfolio/
@@ -79,7 +79,7 @@ portfolio/
 
 ---
 
-## 🚀 Como Executar Localmente
+## Como Executar Localmente
 
 O projeto não exige instalação de gerenciadores de pacotes ou servidores complexos:
 
@@ -99,7 +99,7 @@ O projeto não exige instalação de gerenciadores de pacotes ou servidores comp
 
 ---
 
-## 🌐 Deploy e Publicação
+## Deploy e Publicação
 
 ### Publicação via GitHub Pages
 1. Acesse o repositório no GitHub e vá em **Settings** > **Pages**.
@@ -113,7 +113,7 @@ O projeto não exige instalação de gerenciadores de pacotes ou servidores comp
 
 ---
 
-## 👤 Autor
+## Autor
 
 **Miguel Henrique da Silva Galvão**  
 *Desenvolvedor de Software | Python, IA & Data Analytics*  
